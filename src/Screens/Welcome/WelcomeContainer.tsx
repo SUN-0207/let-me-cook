@@ -4,6 +4,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "@/Navigation";
 import { RootScreens } from "..";
 
+
 type WelcomeScreenNavigatorProps = NativeStackScreenProps<
   RootStackParamList,
   RootScreens.WELCOME
@@ -12,9 +13,15 @@ type WelcomeScreenNavigatorProps = NativeStackScreenProps<
 export const WelcomeContainer = ({
   navigation,
 }: WelcomeScreenNavigatorProps) => {
-  const onNavigate = (screen: RootScreens) => {
-    navigation.navigate(screen);
-  };
+  const onNavigate = ()=>{
+    navigation.navigate(RootScreens.MAIN);
+  }
+  // const doneButton = ({...props})=>{
+  //   return (
+  //       <TouchableOpacity style={styles.doneButton} {...props}>
+  //           <Text>Done</Text>
+  //       </TouchableOpacity>
+  //   )
 
   return <Welcome onNavigate={onNavigate} />;
 };
