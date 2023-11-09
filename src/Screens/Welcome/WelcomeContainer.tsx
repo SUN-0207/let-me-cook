@@ -13,15 +13,9 @@ type WelcomeScreenNavigatorProps = NativeStackScreenProps<
 export const WelcomeContainer = ({
   navigation,
 }: WelcomeScreenNavigatorProps) => {
-  const onNavigate = ()=>{
-    navigation.navigate(RootScreens.MAIN);
+  const onNavigate = (screen: RootScreens)=>{
+    navigation.navigate(screen);
   }
-  // const doneButton = ({...props})=>{
-  //   return (
-  //       <TouchableOpacity style={styles.doneButton} {...props}>
-  //           <Text>Done</Text>
-  //       </TouchableOpacity>
-  //   )
-
+  
   return <Welcome onNavigate={onNavigate} />;
 };
